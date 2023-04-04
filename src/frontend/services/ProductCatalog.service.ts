@@ -17,6 +17,7 @@ import CurrencyGateway from '../gateways/rpc/Currency.gateway';
 import { Money } from '../protos/demo';
 
 const defaultCurrencyCode = 'USD';
+const productsInfo = [];
 
 const ProductCatalogService = () => ({
   async getProductPrice(price: Money, currencyCode: string) {
