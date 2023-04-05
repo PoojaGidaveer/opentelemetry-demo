@@ -27,7 +27,7 @@ const ProductCatalogService = () => ({
   },
   async listProducts(currencyCode = 'USD') {
     const { products: productList } = await ProductCatalogGateway.listProducts();
-
+    productsInfo.push(productList);
     return Promise.all(
       productList.map(async product => {
         const priceUsd = await this.getProductPrice(product.priceUsd!, currencyCode);
